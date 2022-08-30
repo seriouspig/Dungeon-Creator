@@ -1,10 +1,11 @@
 import AddGrid from './AddGrid'
 import React from 'react'
 
-const Form = () => {
+
+const Form = ({onAdd}) => {
   return (
     <div>
-        <AddGrid />
+        <AddGrid onAdd={onAdd}/>
     </div>
   )
 }

@@ -5,12 +5,18 @@ import './App.css';
 
 function App() {
 
-  const [gridDimensions, setGridDimensions ] = useState([3,2])
+  const [gridDimensions, setGridDimensions ] = useState([6,7])
+
+  const addGrid = (grid) => {
+    console.log("Grid Added")
+    console.log(grid)
+    setGridDimensions([parseInt(grid.numberOfRows), parseInt(grid.numberOfColumns)])
+  }
 
   return (
     <div className="App">
-      <Form />
-      <Grid gridDim={gridDimensions}/>
+      <Form onAdd={addGrid}/>
+      <Grid gridDim={gridDimensions} />
     </div>
   );
 }
