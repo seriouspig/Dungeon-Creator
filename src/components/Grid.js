@@ -9,11 +9,15 @@ const Grid = ({gridDim}) => {
         return grid
     }
 
+    const keyId = () => {
+       return (Math.floor(Math.random() * 10000) + 1)
+    }
+    
   return (
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-                    {buildGrid(gridDim).map(row => <div>{row.map(column => <Square value={column}/>)}</div>)} 
+                    {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} value={column}/>)}</div>)} 
                 </div>
     </div>
   )
