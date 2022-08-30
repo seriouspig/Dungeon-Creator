@@ -3,6 +3,8 @@ import Square from './Square'
 
 const Grid = ({gridDim}) => {
 
+    // Grid system
+
     const buildGrid = (arr) => {
         let grid = new Array(arr[0]).fill(0).map(_ => new Array(arr[1]).fill(0))
         console.log(grid)
@@ -12,7 +14,7 @@ const Grid = ({gridDim}) => {
     const keyId = () => {
        return (Math.floor(Math.random() * 10000) + 1)
     }
-    
+
   return (
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
