@@ -42,3 +42,7 @@
   width: 32px;
   height: 32px;
 }
+
+.wall {
+  background-color: rgb(46, 46, 46)
+}
