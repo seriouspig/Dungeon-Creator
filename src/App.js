@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Form from './components/Form.js'
 import Grid from './components/Grid.js'
+import Legend from './components/Legend.js'
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Form onAdd={addGrid}/>
       <Grid gridDim={gridDimensions} />
+      <Legend />
     </div>
   );
 }
