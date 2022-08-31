@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MapElement = ({color, num}) => {
+const MapElement = ({color, num, item}) => {
 
 
 
@@ -9,6 +9,7 @@ const MapElement = ({color, num}) => {
         <button className="map-item" style={{backgroundColor: color}}>
             {num}
         </button>
+        {item}
     </div>
   )
 }

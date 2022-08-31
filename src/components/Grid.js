@@ -1,4 +1,5 @@
 import React from 'react'
+import Legend from './Legend'
 import Square from './Square'
 
 const Grid = ({gridDim}) => {
@@ -19,8 +20,9 @@ const Grid = ({gridDim}) => {
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-                    {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()}/>)}</div>)} 
-                </div>
+            {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} />)}</div>)} 
+        </div>
+        <Legend />
     </div>
   )
 }
