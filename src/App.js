@@ -14,8 +14,6 @@ function App() {
     setGridDimensions([parseInt(grid.numberOfRows), parseInt(grid.numberOfColumns)])
   }
 
-
-
   return (
     <div className="App">
       <Form onAdd={addGrid}/>

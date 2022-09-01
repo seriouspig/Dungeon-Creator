@@ -3,18 +3,18 @@ import { useState, createContext, useContext } from "react";
 
 const Square = ({currentItem}) => {
 
-
     const handleClick = (e) => {
         console.log(" YEAAAAH")
-        // setItemOnSquare(currentItem)
-        console.log("This is onClick return :" + currentItem)
-        e.currentTarget.classList.toggle('wall')
-        e.currentTarget.innerHTML = currentItem
-        // if (e.currentTarget.classList.contains('wall')) {
-        //     e.currentTarget.innerHTML = {currentElement}
-        // } else {
-        //     e.currentTarget.innerHTML = 0
-        // }
+        console.log(currentItem)
+
+        console.log("This is onClick return :" + currentItem[0])
+        e.currentTarget.classList.toggle(currentItem[1])
+        e.currentTarget.innerHTML = currentItem[0]
+        if (e.currentTarget.classList.contains(currentItem[1])) {
+            e.currentTarget.innerHTML = currentItem[0]
+        } else {
+            e.currentTarget.innerHTML = 0
+        }
         
     }
 

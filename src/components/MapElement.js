@@ -6,7 +6,7 @@ const MapElement = ({color, num, item, _onClick}) => {
 
   return (
     <div>
-        <button className="map-item" style={{backgroundColor: color}} onClick={() => _onClick(num)}>
+        <button className="map-item" style={{backgroundColor: color}} onClick={() => _onClick([num,item])}>
             {num}
         </button>
         {item}
