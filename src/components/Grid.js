@@ -9,6 +9,13 @@ const Grid = ({gridDim}) => {
     const [currentElement, setCurrentElement ] = useState(3)
     const [currentItem, setCurrentItem ] = useState(0)
 
+    useEffect(() => {
+          setCurrentItem(currentItem)
+          console.log("This is the useEffect current item: " + currentItem)
+        })
+
+    const itemSelection = React.createContext(4);
+
     let itm =  0
 
     // Grid system
@@ -28,6 +35,7 @@ const Grid = ({gridDim}) => {
     const _onClick = (item) => {
         console.log("This is the item:" + item)
         itm = item
+        setCurrentItem(item)
 
     }
 
@@ -37,13 +45,14 @@ const Grid = ({gridDim}) => {
         item = itm
         console.log("This is the new item:" + item)
         setCurrentItem(item)
+        return item
     }
 
   return (
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-            {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} assignElement={assignElement} _onClick={_onClick} currentItem={currentItem}/>)}</div>)} 
+            {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} assignElement={assignElement} _onClick={_onClick} currentItem={currentItem} itemSelection={itemSelection}/>)}</div>)} 
         </div>
         <Legend _onClick={_onClick}/>
     </div>

@@ -1,13 +1,15 @@
 import React from 'react'
+import { useState, createContext, useContext } from "react";
 
 const Square = ({currentItem, _onClick, assignElement}) => {
 
-    let squareValue = 0
 
     const handleClick = (e) => {
-        console.log("This is onClick return :" + {assignElement})
+        console.log(" YEAAAAH")
+        // setItemOnSquare(currentItem)
+        console.log("This is onClick return :" + currentItem)
         e.currentTarget.classList.toggle('wall')
-        e.currentTarget.innerHTML = {assignElement}
+        e.currentTarget.innerHTML = currentItem
         // if (e.currentTarget.classList.contains('wall')) {
         //     e.currentTarget.innerHTML = {currentElement}
         // } else {
@@ -17,8 +19,8 @@ const Square = ({currentItem, _onClick, assignElement}) => {
     }
 
   return (
-    <button className="square" onClick={() => assignElement(squareValue)}>
-        {currentItem}
+    <button className="square" onClick={handleClick}>
+        0
     </button>
   )
 }

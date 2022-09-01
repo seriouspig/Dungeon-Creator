@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
 
-  const [gridDimensions, setGridDimensions ] = useState([0,0])
+  const [gridDimensions, setGridDimensions ] = useState([5,5])
 
   const addGrid = (grid) => {
     console.log("Grid Added")
