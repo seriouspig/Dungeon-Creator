@@ -20,15 +20,16 @@ const Grid = ({gridDim}) => {
     dynamicArray = buildGrid(gridDim)
 
     const populateGrid = () => {
-        const populatedGrid =   dynamicArray.map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} currentItem={currentItem}/>)}</div>)
+        const populatedGrid =   dynamicArray.map(row => <div key={keyId(row)}>{row.map(column => <Square key={[row,column]} currentItem={currentItem}/>)}</div>)
         
         return populatedGrid
     }
 
     // setBoardArray(dynamicArray)
 
-    const keyId = () => {
-       return (Math.floor(Math.random() * 100000) + 1)
+    const keyId = (val) => {
+    //    return (Math.floor(Math.random() * 100000) + 1)
+        return val
     }
 
     // Current Element
