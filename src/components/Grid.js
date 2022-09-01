@@ -6,11 +6,9 @@ import { useState, useEffect } from 'react'
 const Grid = ({gridDim}) => {
 
     const [currentItem, setCurrentItem ] = useState(0)
+    const [boardArray, setBoardArray] = useState([])
 
-    const itemSelection = React.createContext(4);
-
-    let itm =  0
-
+    let dynamicArray = []
     // Grid system
 
     const buildGrid = (arr) => {
@@ -19,8 +17,18 @@ const Grid = ({gridDim}) => {
         return grid
     }
 
+    dynamicArray = buildGrid(gridDim)
+
+    const populateGrid = () => {
+        const populatedGrid =   dynamicArray.map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} currentItem={currentItem}/>)}</div>)
+        
+        return populatedGrid
+    }
+
+    // setBoardArray(dynamicArray)
+
     const keyId = () => {
-       return (Math.floor(Math.random() * 10000) + 1)
+       return (Math.floor(Math.random() * 100000) + 1)
     }
 
     // Current Element
@@ -28,14 +36,13 @@ const Grid = ({gridDim}) => {
     const _onClick = (item) => {
         console.log("This is the item:" + item)
         setCurrentItem(item)
-
     }
 
   return (
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-            {buildGrid(gridDim).map(row => <div key={keyId()}>{row.map(column => <Square key={keyId()} currentItem={currentItem}/>)}</div>)} 
+            {populateGrid()} 
         </div>
         <Legend _onClick={_onClick}/>
     </div>
