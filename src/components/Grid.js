@@ -19,8 +19,14 @@ const Grid = ({gridDim}) => {
 
     dynamicArray = buildGrid(gridDim)
 
+    // const populateGrid = () => {
+    //     const populatedGrid =   dynamicArray.map(row => <div key={[row]}>{row.map(column => <Square key={[row,column]} currentItem={currentItem}/>)}</div>)
+        
+    //     return populatedGrid
+    // }
+
     const populateGrid = () => {
-        const populatedGrid =   dynamicArray.map(row => <div key={keyId(row)}>{row.map(column => <Square key={[row,column]} currentItem={currentItem}/>)}</div>)
+        const populatedGrid =   dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} currentItem={currentItem}/>)}</div>)
         
         return populatedGrid
     }
