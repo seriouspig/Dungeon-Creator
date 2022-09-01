@@ -11,8 +11,6 @@ const AddGrid = ({onAdd}) => {
 
         onAdd({numberOfRows, numberOfColumns})
 
-        // setNumberOfRows(0)
-        // setNumberOfColumns(0)
 
     }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, createContext, useContext } from "react";
 
-const Square = ({currentItem, _onClick, assignElement}) => {
+const Square = ({currentItem}) => {
 
 
     const handleClick = (e) => {
