@@ -1,5 +1,11 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
+}
+
+.map-container {
+/* 
+  display: flex;
+  flex-direction: column; */
 }
 
 .board {
@@ -7,12 +13,12 @@
   display: inline-flex;
   flex-direction: column;
   /* background-color: wheat; */
-  background-image: url("https://i.pinimg.com/originals/af/f3/9b/aff39b42ed16c769660d52368bff149f.jpg");
-  background-size: 300px;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/49e945aa-a4e5-498d-a9e2-e498fe034cfc/dc5h03q-704584af-0944-4127-9ab6-2ea701e31308.png/v1/fill/w_250,h_250,q_70,strp/grey_red_dungeon_tiles_by_simonlasone_dc5h03q-250t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvNDllOTQ1YWEtYTRlNS00OThkLWE5ZTItZTQ5OGZlMDM0Y2ZjXC9kYzVoMDNxLTcwNDU4NGFmLTA5NDQtNDEyNy05YWI2LTJlYTcwMWUzMTMwOC5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.r0XoYEH_DAcarp6OCb7VkeZGSm5_8FM25O0MhbbSi9s");
+  background-size: 128px;
 }
 
 .square {
-  border: grey 1px dashed;
+  border: black 1px dashed;
   width: 32px;
   height: 32px;
   background-color: rgb(255, 255, 255, 0);
@@ -43,8 +49,8 @@
 }
 
 .treasure {
-  background-color: rgb(0, 81, 187);
-  box-shadow: 0px 0px 29px 3px rgba(0,0,0,0.75);
+  background-image: url("../public/treasure.png");
+
   z-index: 999999;
 }
 

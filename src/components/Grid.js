@@ -46,7 +46,7 @@ const Grid = ({gridDim}) => {
     }
 
   return (
-    <div>
+    <div className="map-container">
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
             {/* {populateGrid()}  */}
