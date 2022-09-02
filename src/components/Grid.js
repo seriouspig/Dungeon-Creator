@@ -8,6 +8,16 @@ const Grid = ({gridDim}) => {
     const [currentItem, setCurrentItem ] = useState([0, "empty"])
     const [boardArray, setBoardArray] = useState([])
 
+    useEffect(() => {
+        console.log(currentItem[1])
+        if (currentItem[1] !== "empty") {
+            const el = document.getElementById(currentItem[1]);
+            console.log(el);
+            el.classList.add("selected")
+        }
+
+      }, []);
+
     let dynamicArray = []
     // Grid system
 
@@ -42,6 +52,12 @@ const Grid = ({gridDim}) => {
 
     const _onClick = (item) => {
         console.log("This is the item:" + item)
+        
+        if (currentItem[1] !== "empty") {
+            const el = document.getElementById(currentItem[1]);
+            console.log(el);
+            el.classList.toggle("selected")
+        }
         setCurrentItem(item)
     }
 

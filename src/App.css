@@ -8,7 +8,14 @@
   flex-direction: column; */
 }
 
+.legend-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .board {
+  margin: 10px;
   width: auto;
   display: inline-flex;
   flex-direction: column;
