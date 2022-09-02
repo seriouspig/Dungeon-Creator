@@ -13,10 +13,10 @@ const Grid = ({gridDim}) => {
         if (currentItem[1] !== "empty") {
             const el = document.getElementById(currentItem[1]);
             console.log(el);
-            el.classList.add("selected")
+            el.classList.toggle("selected")
         }
 
-      }, []);
+      }, [currentItem]);
 
     let dynamicArray = []
     // Grid system
@@ -51,13 +51,12 @@ const Grid = ({gridDim}) => {
     // Current Element
 
     const _onClick = (item) => {
-        console.log("This is the item:" + item)
         
-        if (currentItem[1] !== "empty") {
-            const el = document.getElementById(currentItem[1]);
-            console.log(el);
-            el.classList.toggle("selected")
-        }
+        // if (currentItem[1] !== "empty") {
+        //     const el = document.getElementById(currentItem[1]);
+        //     console.log(el);
+        //     el.classList.toggle("selected")
+        // }
         setCurrentItem(item)
     }
 
@@ -65,8 +64,7 @@ const Grid = ({gridDim}) => {
     <div className="map-container">
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-            {/* {populateGrid()}  */}
-            {dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} currentItem={currentItem}/>)}</div>)}
+            {populateGrid()} 
         </div>
         <Legend _onClick={_onClick}/>
     </div>
