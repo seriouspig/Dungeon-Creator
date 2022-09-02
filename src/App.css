@@ -1,7 +1,15 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
+.board {
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+  /* background-color: wheat; */
+  background-image: url("https://i.pinimg.com/originals/af/f3/9b/aff39b42ed16c769660d52368bff149f.jpg");
+  background-size: 300px;
+}
 
 .square {
   border: grey 1px dashed;
@@ -12,6 +20,13 @@
 
 .empty {
   background-color: rgb(255, 255, 255, 0);
+}
+
+.delete {
+  background-color: none;
+  box-shadow: 0px 0px 29px 3px rgba(0,0,0,0.75);
+  z-index: 999999;
+  color: white;
 }
 
 .wall {

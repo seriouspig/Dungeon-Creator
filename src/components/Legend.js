@@ -10,6 +10,7 @@ const Legend = ({_onClick}) => {
     
   return (
     <div>
+        <MapElement color={""} num={0} item={"delete"} _onClick={_onClick}/>
         <MapElement color={"red"} num={2} item={"wall"} _onClick={_onClick}/>
         <MapElement color={"green"} num={3} item={"enemy"} _onClick={_onClick}/>
         <MapElement color={"blue"} num={4} item={"treasure"} _onClick={_onClick}/>

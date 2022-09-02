@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 const Grid = ({gridDim}) => {
 
-    const [currentItem, setCurrentItem ] = useState(0)
+    const [currentItem, setCurrentItem ] = useState([0, "empty"])
     const [boardArray, setBoardArray] = useState([])
 
     let dynamicArray = []
