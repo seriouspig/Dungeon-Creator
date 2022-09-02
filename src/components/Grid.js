@@ -49,7 +49,8 @@ const Grid = ({gridDim}) => {
     <div>
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
         <div className="board">
-            {populateGrid()} 
+            {/* {populateGrid()}  */}
+            {dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} currentItem={currentItem}/>)}</div>)}
         </div>
         <Legend _onClick={_onClick}/>
     </div>

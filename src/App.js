@@ -8,10 +8,17 @@ function App() {
 
   const [gridDimensions, setGridDimensions ] = useState([5,5])
 
-  const addGrid = (grid) => {
+  const addGrid = async (grid) => {
+    const reslut = await resetGrid()
     console.log("Grid Added")
     console.log(grid)
     setGridDimensions([parseInt(grid.numberOfRows), parseInt(grid.numberOfColumns)])
+  }
+
+  const resetGrid = () => {
+
+    setGridDimensions([0,0])
+    // setGridDimensions([parseInt(grid.numberOfRows), parseInt(grid.numberOfColumns)])
   }
 
   return (
