@@ -1,4 +1,5 @@
 import React from 'react'
+import treasure from '../img/treasure.png'
 
 const MapElement = ({color, num, item, _onClick}) => {
 
@@ -6,7 +7,7 @@ const MapElement = ({color, num, item, _onClick}) => {
 
   return (
     <div>
-        <button className="map-item" style={{backgroundColor: color}} onClick={() => _onClick([num,item])}>
+        <button className={`map-item ${item}`} onClick={() => _onClick([num,item])}>
             {num}
         </button>
         {item}
