@@ -10,12 +10,16 @@ const Grid = ({gridDim}) => {
 
     useEffect(() => {
         console.log(currentItem[1])
+        let buttons = document.getElementsByClassName("map-item")
+        console.log(buttons)
+        for (let i=0; i < buttons.length; i++) {
+            buttons[i].classList.remove("selected")
+        }
         if (currentItem[1] !== "empty") {
             const el = document.getElementById(currentItem[1]);
             console.log(el);
             el.classList.toggle("selected")
         }
-
       }, [currentItem]);
 
     let dynamicArray = []
