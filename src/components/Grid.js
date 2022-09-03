@@ -33,34 +33,17 @@ const Grid = ({gridDim}) => {
 
     dynamicArray = buildGrid(gridDim)
 
-    // const populateGrid = () => {
-    //     const populatedGrid =   dynamicArray.map(row => <div key={[row]}>{row.map(column => <Square key={[row,column]} currentItem={currentItem}/>)}</div>)
-        
-    //     return populatedGrid
-    // }
-
     const populateGrid = () => {
         const populatedGrid =   dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} currentItem={currentItem}/>)}</div>)
         
         return populatedGrid
     }
 
-    // setBoardArray(dynamicArray)
-
-    const keyId = (val) => {
-    //    return (Math.floor(Math.random() * 100000) + 1)
-        return val
-    }
 
     // Current Element
 
     const _onClick = (item) => {
         
-        // if (currentItem[1] !== "empty") {
-        //     const el = document.getElementById(currentItem[1]);
-        //     console.log(el);
-        //     el.classList.toggle("selected")
-        // }
         setCurrentItem(item)
     }
 
