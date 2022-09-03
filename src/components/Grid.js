@@ -1,6 +1,7 @@
 import React from 'react'
 import Legend from './Legend'
 import Square from './Square'
+import Generator from './Generator'
 import { useState, useEffect } from 'react'
 
 const Grid = ({gridDim}) => {
@@ -47,6 +48,12 @@ const Grid = ({gridDim}) => {
         setCurrentItem(item)
     }
 
+    // Generate Dungeon
+
+    const generateDungeon = () => {
+        console.log("Generating Dungeon")
+    }
+
   return (
     <div className="map-container">
         This is the grid with dimensions of {gridDim[0]} x {gridDim[1]} 
@@ -54,6 +61,7 @@ const Grid = ({gridDim}) => {
             {populateGrid()} 
         </div>
         <Legend _onClick={_onClick}/>
+        <Generator generateDungeon={generateDungeon}/>
     </div>
   )
 }
