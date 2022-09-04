@@ -37,9 +37,9 @@ function App() {
     for (let i=0; i < arr.length; i++) {
       for (let j=0; j < arr[i].length; j++) {
         if (arr[i][j] == 1) {
-          dungeon3d.push(<Box  key={[i,j]} pos={[i,0, j]} />) 
+          dungeon3d.push(<Box  key={[i,j]} pos={[-i,0, j]} />) 
         } else if (arr[i][j] == 2) {
-          dungeon3d.push(<Box  key={[i,j]} pos={[i,0, j]} />)
+          dungeon3d.push(<Box  key={[i,j]} pos={[-i,0, j]} />)
         } 
       }
     }
@@ -57,11 +57,11 @@ const pull_data = (data) => {
     <div className="App">
       <Form onAdd={addGrid}/>
       <Grid gridDim={gridDimensions} func={pull_data}/>
-      <Canvas className="canvas" camera={{position: [6,6,0], fov: 60}}>
+      <Canvas className="canvas" camera={{position: [-12,0,6], fov: 60}}>
         <OrbitControls enableZoom={true}/>
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2,5,2]} intensity={1} />
-        <perspectiveCamera position={[0,10,20]}/>
+        <perspectiveCamera position={[0,0,0]}/>
         <Suspense name="maze-holder" id="suspense" fallback={null}>
           {generate3dDungeon(maze3d)}
         </Suspense>
