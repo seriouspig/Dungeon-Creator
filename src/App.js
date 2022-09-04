@@ -49,42 +49,14 @@ function App() {
     return dungeon3d  
   }
 
-let dungeonFromChild = [
-  [0,1,1,1,1,1,1,],
-  [1,1,1,1,0,1,1,]
-]
-
-const callback = (dupa) => {
-  console.log("This is done")
-  console.log(dupa)
-  setMaze3d(dupa)
-}
-
 const pull_data = (data) => {
-  console.log(" This is the data ")
-  console.log(data)
-  console.log("This is the hard coded dungeon from Child")
-  console.log(dungeonFromChild)
-  dungeonFromChild = data
-  console.log("this is the dupa")
-  console.log(dungeonFromChild)
-  // setMaze3d(dungeonFromChild)
-  // console.log("This is maze 3d")
-  // console.log(maze3d)
-  // callback(dupa)
+  setMaze3d(data)
 }
-
-const create3d = () => {
-  setMaze3d(dungeonFromChild)
-}
-
-
 
   return (
     <div className="App">
       <Form onAdd={addGrid}/>
       <Grid gridDim={gridDimensions} func={pull_data}/>
-      <button onClick={create3d}>CREATE 3D</button>
       <Canvas className="canvas" camera={{position: [6,6,0], fov: 60}}>
         <OrbitControls enableZoom={true}/>
         <ambientLight intensity={0.5} />
