@@ -4,7 +4,7 @@ import Form from './components/Form.js'
 import Grid from './components/Grid.js'
 import Legend from './components/Legend.js'
 import './App.css';
-import {Canvas} from "@react-three/fiber"
+import {Canvas, useThree} from "@react-three/fiber"
 import Box from './components/Box.js';
 import { OrbitControls, PerspectiveCamera} from "@react-three/drei"
 import { Scene } from 'three';
@@ -53,11 +53,13 @@ const pull_data = (data) => {
   setMaze3d(data)
 }
 
+
+ 
   return (
     <div className="App">
       <Form onAdd={addGrid}/>
       <Grid gridDim={gridDimensions} func={pull_data}/>
-      <Canvas className="canvas" camera={{position: [-12,0,6], fov: 60}}>
+      <Canvas className="canvas" camera={{position: [-12,12,0], fov: 60}}>
         <OrbitControls enableZoom={true}/>
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2,5,2]} intensity={1} />
