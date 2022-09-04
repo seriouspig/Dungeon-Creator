@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, createContext, useContext } from "react";
 
-const Square = ({currentItem}) => {
+const Square = ({currentItem, pos}) => {
 
     const handleClick = (e) => {
         console.log(" YEAAAAH")
@@ -27,11 +27,10 @@ const Square = ({currentItem}) => {
             e.currentTarget.classList.add('square')
             e.currentTarget.classList.add(currentItem[1])
         }
-
     }
 
   return (
-    <button className="square empty" onClick={handleClick}>
+    <button className="square empty" onClick={handleClick} id={pos} >
         0
     </button>
   )

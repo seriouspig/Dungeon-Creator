@@ -35,7 +35,7 @@ const Grid = ({gridDim}) => {
     dynamicArray = buildGrid(gridDim)
 
     const populateGrid = () => {
-        const populatedGrid =   dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} currentItem={currentItem}/>)}</div>)
+        const populatedGrid =   dynamicArray.map((row, i1) => <div key={i1}>{row.map((column, i2) => <Square key={[i1,i2]} pos={[i1, i2]} currentItem={currentItem}/>)}</div>)
         
         return populatedGrid
     }
@@ -52,6 +52,12 @@ const Grid = ({gridDim}) => {
 
     const generateDungeon = () => {
         console.log("Generating Dungeon")
+        let dungeon = []
+        let squares = document.getElementsByClassName("square")
+        console.log(squares)
+        console.log(dynamicArray)
+        
+
     }
 
   return (
