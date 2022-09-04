@@ -32,8 +32,8 @@ function App() {
   ]
 
   const generate3dDungeon = (arr) => {
-    const dungeon3d = arr.map((row, i1) => <Box key={i1} pos={[i1,0,0]} />)
-
+    const dungeon3d =   arr.map((row, i1) => <>{row.map((column, i2) => <Box  key={[i1,i2]} pos={[i1,0, i2]} />)}</>)
+      
     return dungeon3d
   }
 
