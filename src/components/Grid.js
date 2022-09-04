@@ -4,7 +4,7 @@ import Square from './Square'
 import Generator from './Generator'
 import { useState, useEffect } from 'react'
 
-const Grid = ({gridDim}) => {
+const Grid = ({gridDim, maze3d, generate3dDungeon, func}) => {
 
     const [currentItem, setCurrentItem ] = useState([0, "empty"])
     const [boardArray, setBoardArray] = useState([])
@@ -67,9 +67,13 @@ const Grid = ({gridDim}) => {
 
         console.log(dynamicArray)
         setBoardArray(dynamicArray)
-        
+        console.log("Assigning data to func")
+        console.log(dynamicArray)
+        func(dynamicArray)
 
     }
+
+
 
   return (
     <div className="map-container">
