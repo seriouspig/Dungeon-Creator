@@ -53,8 +53,20 @@ const Grid = ({gridDim}) => {
     const generateDungeon = () => {
         console.log("Generating Dungeon")
         let dungeon = []
-        let squares = document.getElementsByClassName("square")
-        console.log(squares)
+        let squares = Array.from(document.getElementsByClassName("square"))
+        console.log(squares[0])
+        console.log(dynamicArray)
+        squares.forEach(element => {
+            console.log(element.innerHTML)
+            console.log(element.id)
+            let idArr = element.id.split(",")
+            let idArrInt = idArr.map(str => {
+                return Number(str)
+            })
+            console.log(idArrInt)
+            dynamicArray[idArrInt[0]][idArrInt[1]] = Number(element.innerHTML)
+        });
+
         console.log(dynamicArray)
         
 
