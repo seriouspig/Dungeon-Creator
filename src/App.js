@@ -15,9 +15,7 @@ function App() {
   const [maze3d, setMaze3d] = useState([    [1,0,2],
     [1,1,1],
     [1,1,1]])
-    const [maze3d2, setMaze3d2] = useState([    [1,0,2],
-      [1,1,1],
-      [1,1,1]])
+
 
   const addGrid = async (grid) => {
     const reslut = await resetGrid()
@@ -31,12 +29,6 @@ function App() {
     setGridDimensions([0,0])
 
   }
-
-  let testDungeon = [
-    [1,0,2],
-    [1,0,1],
-    [1,1,1]
-  ]
 
   const generate3dDungeon = (arr) => {
 
@@ -55,7 +47,7 @@ function App() {
     console.log(dungeon3d)
       
     return dungeon3d  
-}
+  }
 
 let dungeonFromChild = [
   [0,1,1,1,1,1,1,],
@@ -71,13 +63,19 @@ const callback = (dupa) => {
 const pull_data = (data) => {
   console.log(" This is the data ")
   console.log(data)
-  // dungeonFromChild = data
+  console.log("This is the hard coded dungeon from Child")
+  console.log(dungeonFromChild)
+  dungeonFromChild = data
   console.log("this is the dupa")
   console.log(dungeonFromChild)
-  setMaze3d(dungeonFromChild)
-  console.log("This is maze 3d")
-  console.log(maze3d)
+  // setMaze3d(dungeonFromChild)
+  // console.log("This is maze 3d")
+  // console.log(maze3d)
   // callback(dupa)
+}
+
+const create3d = () => {
+  setMaze3d(dungeonFromChild)
 }
 
 
@@ -86,7 +84,7 @@ const pull_data = (data) => {
     <div className="App">
       <Form onAdd={addGrid}/>
       <Grid gridDim={gridDimensions} func={pull_data}/>
-
+      <button onClick={create3d}>CREATE 3D</button>
       <Canvas className="canvas" camera={{position: [6,6,0], fov: 60}}>
         <OrbitControls enableZoom={true}/>
         <ambientLight intensity={0.5} />
