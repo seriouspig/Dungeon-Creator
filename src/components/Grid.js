@@ -57,8 +57,6 @@ const Grid = ({gridDim}) => {
         console.log(squares[0])
         console.log(dynamicArray)
         squares.forEach(element => {
-            console.log(element.innerHTML)
-            console.log(element.id)
             let idArr = element.id.split(",")
             let idArrInt = idArr.map(str => {
                 return Number(str)
@@ -68,6 +66,7 @@ const Grid = ({gridDim}) => {
         });
 
         console.log(dynamicArray)
+        setBoardArray(dynamicArray)
         
 
     }
