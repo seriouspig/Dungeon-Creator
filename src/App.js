@@ -55,15 +55,23 @@ const pull_data = (data) => {
 
 function CameraHelper() {
   const camera = new PerspectiveCamera(60, 1, 1, 3);
-  return <group position={[0, 0, 2]}>
-    <cameraHelper args={[camera]} />
+  return <group position={[1, 0, 1]} >
+    <cameraHelper args={[camera]} target={[4,0,1]}/>
+  </group>;
+}
+
+function NewCamera() {
+  const camera = new PerspectiveCamera(60, 1, 1, 3);
+  return <group position={[12, 0, 1]} >
+    <camera makeDefault args={[camera]} target={[1,0,1]}/>
   </group>;
 }
 
 function ThreeScene() {
   return (
-      <Canvas className="canvas" camera={{position: [-12,12,0], fov: 60}}>
-        <OrbitControls enableZoom={true}/>
+      <Canvas className="canvas" camera={{position: [-2,0,1], fov: 60}}>
+        <NewCamera />
+        <OrbitControls enableZoom={true} target={[-1,0,1]}/>
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2,5,2]} intensity={1} />
         <Suspense name="maze-holder" id="suspense" fallback={null}>
